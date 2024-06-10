@@ -1,0 +1,121 @@
+.__light-mode {
+    --background-main: #d2d2d2be;
+    --background-root: #fff;
+    --background-header-root: #bebdbd;
+    --header-height: 100px;
+    --board-width: 400px;
+    --board-height: 500px;
+    --board-padding: 35px 35px 0 35px;
+    --task-height: 45px;
+    --task-padding: 15px;
+    --board-radius: 50px;
+    --font-size-title: 20px;
+}
+
+.__dark-mode {
+    --background-main: #d2d2d2be;
+    --background-root: #000;
+    --background-header-root: #584848;
+    --header-height: 100px;
+    --board-width: 400px;
+    --board-height: 500px;
+    --board-padding: 35px 35px 0 35px;
+    --task-height: 45px;
+    --task-padding: 15px;
+    --board-radius: 50px;
+    --font-size-title: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-root);
+}
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--background-header-root);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.appear {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.appear > * {
+    display: inline;
+}
+
+.input input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.button button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--board-width), 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.board {
+    width: var(--board-width);
+    height: var(--board-height);
+    background-color: var(--background-main);
+    border-radius: var(--board-radius);
+    padding: var(--board-padding);
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+}
+
+.board-title {
+    font-size: var(--font-size-title);
+    height: 50px;
+}
+
+.task {
+    width: 100%;
+    height: var(--task-height);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+    padding: var(--task-padding);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.task-title {
+    font-size: 16px;
+}
